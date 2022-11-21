@@ -1,0 +1,4 @@
+[core]
+	editor = nvim
+[credential "helperselector"]
+	selected = manager-core
