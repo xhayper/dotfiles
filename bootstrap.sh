@@ -6,8 +6,9 @@ read -n 1
 ## CONFIG ##
 
 # keep a backup of user's zshrc
-cp -f ~/.zshrc ~/.zshrc-backup
+cp -f ~/.zshrc ~/.zshrc.backup
 rm -f ~/.zshrc
+echo "I made a copy of your zshrc in ~/.zshrc.backup!"
 
 cp -f .config/* ~/.config
 cp -f .gitconfig ~/
@@ -49,6 +50,8 @@ brew install --cask authy
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # mambaforge (aka conda-forge but use mamba resolver)
 sh -c "$(curl -fsSL "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh)")"
@@ -59,4 +62,4 @@ cat .zshrc >> ~/.zshrc
 ## All done! ##
 
 echo "Great! Everything is installed!"
-echo "Now, add \"command-not-found\" to oh-my-zsh's plugin list! and you will be done!"
+echo "Now, add \"command-not-found\", \"zsh-autosuggestions\" and \"zsh-syntax-highlighting\" to oh-my-zsh's plugin list! and you will be done!"
