@@ -60,6 +60,5 @@ sh -c "$(curl -fsSL "https://github.com/conda-forge/miniforge/releases/latest/do
 cat .zshrc >> ~/.zshrc
 
 ## All done! ##
-
 echo "Great! Everything is installed!"
 echo "Now, add \"command-not-found\", \"zsh-autosuggestions\" and \"zsh-syntax-highlighting\" to oh-my-zsh's plugin list! and you will be done!"
