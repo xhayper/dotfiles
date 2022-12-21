@@ -4,6 +4,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+Plug 'folke/neodev.nvim'
+
 Plug 'wakatime/vim-wakatime'
 Plug ('neoclide/coc.nvim', { branch = 'release' })
 
