@@ -24,7 +24,7 @@ echo "    FPATH=\"\$(brew --prefix)/share/zsh/site-functions:\$FPATH\"" >> ~/.zs
 echo "fi" >> ~/.zshrc
 echo "" >> ~/.zshrc
 
-echo "FPATH=~/.zfunc:$FPATH" >> ~/.zshrc
+echo "FPATH=~/.zfunc:\$FPATH" >> ~/.zshrc
 echo "" >> ~/.zshrc
 
 ## INSTALL ##
@@ -51,8 +51,8 @@ volta install node
 ## CONFIG ##
 cat .zshrc >> ~/.zshrc
 
-echo "VOLTA_HOME=\"$HOME/.volta\"" >> ~/.zshrc
-echo "PATH=\"$VOLTA_HOME/bin:$PATH\"" >> ~/.zshrc
+echo "VOLTA_HOME=\"\$HOME/.volta\"" >> ~/.zshrc
+echo "PATH=\"\$VOLTA_HOME/bin:\$PATH\"" >> ~/.zshrc
 
 conda init "$(basename "${SHELL}")"
 
