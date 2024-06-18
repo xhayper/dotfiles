@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo IF THIS SCRIPT BROKE YOUR DOTFILES, I AM NOT RESPONSIBLE FOR IT.
+echo IF THIS SCRIPT BREAKS YOUR DOTFILES, I AM NOT RESPONSIBLE FOR IT.
 read -n 1
 
 ## CONFIG ##
@@ -33,32 +33,28 @@ echo "" >> ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 "$(/opt/homebrew/bin/brew shellenv)"
 
-brew tap homebrew/cask
-brew tap homebrew/cask-versions
-brew tap homebrew/command-not-found
-
 brew install neovim
-brew install asdf
-brew install bat
-# YOOO
-brew install neofetch
+brew install volta
+brew install miniforge
 
-brew install --cask iterm2
 brew install --cask warp
 brew install --cask firefox-developer-edition
-brew install --cask authy
+brew install --cask font-hack-nerd-font
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+# Node
 
-# mambaforge (aka conda-forge but use mamba resolver)
-sh -c "$(curl -fsSL "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh)")"
+VOLTA_HOME="$HOME/.volta"
+PATH="$VOLTA_HOME/bin:$PATH"
+
+volta install node
 
 ## CONFIG ##
 cat .zshrc >> ~/.zshrc
 
+echo "VOLTA_HOME=\"$HOME/.volta\"" >> ~/.zshrc
+echo "PATH=\"$VOLTA_HOME/bin:$PATH\"" >> ~/.zshrc
+
+conda init "$(basename "${SHELL}")"
+
 ## All done! ##
 echo "Great! Everything is installed!"
-echo "Now, add \"command-not-found\", \"zsh-autosuggestions\" and \"zsh-syntax-highlighting\" to oh-my-zsh's plugin list! and you will be done!"
