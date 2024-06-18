@@ -38,7 +38,6 @@ brew install volta
 brew install miniforge
 
 brew install --cask warp
-brew install --cask firefox-developer-edition
 brew install --cask font-hack-nerd-font
 
 # Node
