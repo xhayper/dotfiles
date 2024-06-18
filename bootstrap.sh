@@ -50,6 +50,7 @@ volta install node
 ## CONFIG ##
 cat .zshrc >> ~/.zshrc
 
+echo "" >> ~/.zshrc
 echo "VOLTA_HOME=\"\$HOME/.volta\"" >> ~/.zshrc
 echo "PATH=\"\$VOLTA_HOME/bin:\$PATH\"" >> ~/.zshrc
 
