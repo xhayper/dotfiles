@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo IF THIS SCRIPT BREAKS YOUR DOTFILES, I AM NOT RESPONSIBLE FOR IT.
 read -n 1
