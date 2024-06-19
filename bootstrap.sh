@@ -36,6 +36,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/inst
 brew install neovim
 brew install volta
 brew install miniforge
+brew install fastfetch
 
 brew install --cask warp
 brew install --cask font-hack-nerd-font
